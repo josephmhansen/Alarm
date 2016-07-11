@@ -28,13 +28,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umE-Z5-Clq">
                                                     <rect key="frame" x="0.0" y="0.0" width="42" height="48"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1u7-8r-cKu">
                                                     <rect key="frame" x="124" y="0.0" width="42" height="48"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCH-k8-tn4">
@@ -61,7 +61,7 @@
                                     <outlet property="alarmSwitch" destination="TCH-k8-tn4" id="Bwm-XI-qLu"/>
                                     <outlet property="nameLabel" destination="1u7-8r-cKu" id="svh-or-y4I"/>
                                     <outlet property="timeLabel" destination="umE-Z5-Clq" id="oEo-EH-xWV"/>
-                                    <segue destination="E8s-Ja-8tA" kind="show" id="N8E-71-xfT"/>
+                                    <segue destination="E8s-Ja-8tA" kind="show" identifier="toEditAlarm" id="qcz-Kk-uUs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -73,7 +73,7 @@
                     <navigationItem key="navigationItem" id="xP5-vi-Es3">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5J7-ny-doT">
                             <connections>
-                                <segue destination="E8s-Ja-8tA" kind="show" id="fJa-Ob-5qv"/>
+                                <segue destination="E8s-Ja-8tA" kind="show" identifier="toAddAlarm" id="fJa-Ob-5qv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -89,7 +89,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="eti-DC-zbE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="WCX-4f-avK">
                                 <cells>

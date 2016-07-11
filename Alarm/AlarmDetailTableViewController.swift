@@ -10,19 +10,36 @@ import UIKit
 
 class AlarmDetailTableViewController: UITableViewController {
     
+    var alarm: Alarm?
+    
+    
     @IBOutlet weak var alarmDatePicker: UIDatePicker!
     @IBOutlet weak var alarmTextField: UITextField!
     
     @IBOutlet weak var alarmEnableButton: UIButton!
     
-    @IBAction func enableButtonTapped(sender: AnyObject) {
+    func updateWithAlarm(alarm: Alarm) {
+        guard let thisMorningAtMidnight = DateHelper.thisMorningAtMidnight else {return}
+        alarmDatePicker.setDate(NSDate(timeInterval: alarm.fireTimeFromMidnight, sinceDate: thisMorningAtMidnight), animated: false)
+        alarmTextField.text = alarm.name
+        self.title = alarm.name
     }
+    
+    @IBAction func enableButtonTapped(sender: AnyObject) {
+        
+    }
+    
     @IBOutlet weak var saveButtonTapped: UIBarButtonItem!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let alarm = alarm {
+            updateWithAlarm(alarm)
+        }
+        setupView()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -30,11 +47,23 @@ class AlarmDetailTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupView() {
+        if alarm == nil {
+            alarmEnableButton.hidden = true
+        } else {
+            alarmEnableButton.hidden = false
+            if alarm?.enabled == true {
+                alarmEnableButton.setTitle("Disable", forState: .Normal)
+                alarmEnableButton.setTitleColor(.whiteColor(), forState: .Normal)
+                alarmEnableButton.backgroundColor = .redColor()
+            } else {
+                alarmEnableButton.setTitle("Enable", forState: .Normal)
+                alarmEnableButton.setTitleColor(.blueColor(), forState: .Normal)
+                alarmEnableButton.backgroundColor = .greenColor()
+            }
+        }
     }
+    
 
     // MARK: - Table view data source
 

@@ -10,11 +10,15 @@ import UIKit
 
 class SwitchTableViewCell: UITableViewCell {
 
+    
+    weak var delegate: SwitchTableViewCellDelegate?
+    
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var alarmSwitch: UISwitch!
     
     @IBAction func switchValueChanged(sender: AnyObject) {
+        delegate?.switchCellSwitchValueChanged(self)
     }
     
     func updateWithAlarm(alarm: Alarm) {
@@ -35,5 +39,9 @@ class SwitchTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+}
 
+
+protocol SwitchTableViewCellDelegate: class {
+    func switchCellSwitchValueChanged(cell: SwitchTableViewCell)
 }

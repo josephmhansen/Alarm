@@ -30,6 +30,10 @@ class AlarmController {
         
     }
     
+    func toggleEnabled(alarm: Alarm) {
+        alarm.enabled = !alarm.enabled
+    }
+    
     func addAlarm(fireTimeFromMidnight: NSTimeInterval, name: String) {
         let alarm = Alarm(fireTimeFromMidnight: fireTimeFromMidnight, name: name)
         alarms.append(alarm)

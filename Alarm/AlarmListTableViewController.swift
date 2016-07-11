@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlarmListTableViewController: UITableViewController {
+class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +63,21 @@ class AlarmListTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
+    
+    func switchCellSwitchValueChanged(cell: SwitchTableViewCell) {
+        guard let indexPath = tableView.indexPathForCell(cell) else {return}
+        let alarm = AlarmController.sharedController.alarms[indexPath.row]
+        AlarmController.sharedController.toggleEnabled(alarm)
+        if alarm.enabled {
+            
+        } else {
+            
+        }
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        
+    }
+    
+    
   
 
     /*
