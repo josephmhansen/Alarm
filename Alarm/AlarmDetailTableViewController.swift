@@ -9,12 +9,16 @@
 import UIKit
 
 class AlarmDetailTableViewController: UITableViewController {
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var alarmTextField: UITextField!
-    @IBOutlet weak var saveButtonTapped: UIButton!
     
-    @IBAction func saveButtonTapped(sender: AnyObject) {
+    @IBOutlet weak var alarmDatePicker: UIDatePicker!
+    @IBOutlet weak var alarmTextField: UITextField!
+    
+    @IBOutlet weak var alarmEnableButton: UIButton!
+    
+    @IBAction func enableButtonTapped(sender: AnyObject) {
     }
+    @IBOutlet weak var saveButtonTapped: UIBarButtonItem!
+    
     
     
     override func viewDidLoad() {
