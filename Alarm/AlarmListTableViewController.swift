@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlarmsTableViewController: UITableViewController {
+class AlarmListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
