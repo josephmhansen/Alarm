@@ -17,6 +17,14 @@ class SwitchTableViewCell: UITableViewCell {
     @IBAction func switchValueChanged(sender: AnyObject) {
     }
     
+    func updateWithAlarm(alarm: Alarm) {
+        timeLabel.text = alarm.fireTimeAsString
+        nameLabel.text = alarm.name
+        alarmSwitch.on = alarm.enabled
+        
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
